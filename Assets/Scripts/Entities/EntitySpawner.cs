@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -32,9 +31,11 @@ public class EntitySpawner : MonoBehaviour
 			yield return new WaitForSeconds(1 / spawnRate);
 			if (entitesParent.childCount >= maxQuantity) continue;
 
-			spawnPos = Random.insideUnitSphere * spawnRadius;
-			spawnPos.y = 0;
-			spawnPos += transform.position;
+			spawnPos = Random.insideUnitCircle * spawnRadius;
+            // insideUnitCircle returns a vector2, so we need to switch some values
+            spawnPos.z = spawnPos.y;
+            spawnPos.y = 0;
+            spawnPos += transform.position;
 			if (NavMesh.SamplePosition(spawnPos, out hit, samplingDistance, NavMesh.AllAreas))
 				spawnPos = hit.position;
 			else spawnPos = transform.position;
