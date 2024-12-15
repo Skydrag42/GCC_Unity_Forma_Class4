@@ -52,14 +52,14 @@ public void Interact()
 If you have correctly followed the previous classes, 
 this part should not give you any trouble. 
 
-Import the [Slime](ClassTutorialAssets/Class4/lp_slime.fbx) model 
+Import the [Slime](ClassTutorialAssets/class4/lp_slime.fbx) model 
 and give him a collider (and a color if you want to). 
 Add an animator controller to play the Idle animation. 
 Don't forget to check the `Loop Time` import setting
 in the model animation tab for the Idle animation, 
 otherwise it will only play once.
 
-![slime](ClassTutorialAssets/Class4/img/slime.png)
+![slime](ClassTutorialAssets/class4/img/slime.png)
 
 
 ## The AI Navigation package
@@ -80,7 +80,7 @@ package installed. In that case, just check that you have the latest version and
 you're good to go. Otherwise, go to the Unity Registry tab and enter 'AI' 
 in the search bar. You should see it appear. Click install.
 
-![navigation package](ClassTutorialAssets/Class4/img/navigation_package.png)
+![navigation package](ClassTutorialAssets/class4/img/navigation_package.png)
 
 ### Creating the navmesh
 
@@ -91,10 +91,10 @@ since our slime is not `humanoid`. Click on Agent Type, and open the
 Navigation settings (or Window->AI->Navigation). 
 
 Create a Slime agent, and set its values. I'll go for a radius and height of 
-0.75, a slope of 50° and a step height of 0.6, but it's up to you to choose values that fit the way you want your 
+0.75, a slope of 50Â° and a step height of 0.6, but it's up to you to choose values that fit the way you want your 
 characters to behave, so testing is often in order.
 
-![slime agent type](ClassTutorialAssets/Class4/img/slime_agent_type.png)
+![slime agent type](ClassTutorialAssets/class4/img/slime_agent_type.png)
 
 Now, go back to your NavMeshSurface component.
 
@@ -105,7 +105,7 @@ layers you want to include, in our case only the default and interactable ones.
 
 Then, hit bake and you should see a lot of blue polygons appear on your scene.
 
-![first navmesh](ClassTutorialAssets/Class4/img/first_navmesh.png)
+![first navmesh](ClassTutorialAssets/class4/img/first_navmesh.png)
 
 If you take a closer look, you'll see that what's in blue defines the area 
 (walkable in our case) we juste baked, and that there are holes around the trees.
@@ -129,7 +129,7 @@ Now that we've made an approximately correct navmesh, let's add agents thats wil
 use it. On your slime prefab, add a `NavMeshAgent` component and set its type to slime.
 Then, adjust the settings to your needs. I go with the following:
 
-![agent settings](ClassTutorialAssets/Class4/img/agent_settings.png)
+![agent settings](ClassTutorialAssets/class4/img/agent_settings.png)
 
 The next step is making a script that will set a destination for the agent. 
 For starters, we'll test by simply giving the player as a destination so that 
@@ -314,13 +314,13 @@ If you want further control on the spawned object, the method returns its refere
 If you want, you can set a custom icon for your script. Select it, and click 
 on the arrow under the default icon.
 
-![agent settings](ClassTutorialAssets/Class4/img/script_icon.png)
+![agent settings](ClassTutorialAssets/class4/img/script_icon.png)
 
 Now, you can create a slime spawner object and a slime parent object (it will hold all the instances, so it's
 better if it is a stationary object with its transform set to default values). Assing the values to the script,
 and try it.
 
-![slime wave](ClassTutorialAssets/Class4/img/slime_wave.png)
+![slime wave](ClassTutorialAssets/class4/img/slime_wave.png)
 
 ## Creating a custom shader
 
@@ -353,7 +353,7 @@ The first thing we'll be doing is creating a new `BaseColor` property from the "
 setting its default value and then linking it to the Base Color in the fragment node 
 (drag and drop the property to add it to the blackboard).
 
-![shader base color](ClassTutorialAssets/Class4/img/shader_base_color.png)
+![shader base color](ClassTutorialAssets/class4/img/shader_base_color.png)
 
 Then, press space to add a new node. Search for the `Fresnel Effect` one.
 This node generates white when near the borders of the mesh and black in the center. 
@@ -367,7 +367,7 @@ Finally, create a float property to control the fresnel strength, and another on
 
 Your graph should look something like this:
 
-![final graph](ClassTutorialAssets/Class4/img/final_graph.png)
+![final graph](ClassTutorialAssets/class4/img/final_graph.png)
 
 
 Now, go back to your project window, and right-click on your shader, create material. 
@@ -375,7 +375,7 @@ This will create a material with the correct shader already selected.
 Assign it to your slime prefab, and adjust the values as you see fit.
 
 It should look like this:
-![slime with shader](ClassTutorialAssets/Class4/img/slime_with_shader.png)
+![slime with shader](ClassTutorialAssets/class4/img/slime_with_shader.png)
 
 If you cannot see the gloaw around the slime, there are a few reasons why that might be:
 - the intensity value for the glow color is too small / the color is too dark
@@ -397,11 +397,11 @@ like bloom or vignette, and see how that affects your game view.
 If you want to set a specific volume area or change the default volume for only this scene, juste create 
 a new gameobject, add a volume component, and create a new volume asset.
 
-![having fun with volumes](ClassTutorialAssets/Class4/img/having_fun_with_volumes.png)
+![having fun with volumes](ClassTutorialAssets/class4/img/having_fun_with_volumes.png)
 
 ## Conclusion
 
-*Et voilà!* You're done with this course. It's now up to you if you want to expand on 
+*Et voilÃ !* You're done with this course. It's now up to you if you want to expand on 
 what we've built so far, or if you want to start your own project. 
 
 However, remember this was just an introduction, as we've only scratched the surface of 
