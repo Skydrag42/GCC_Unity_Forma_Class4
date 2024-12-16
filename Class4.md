@@ -1,6 +1,6 @@
 # Class 4
 
-In this third class, you'll learn the following:
+In this fourth class, you'll learn the following:
 - Adding sound effects / music
 - Importing unity packages
 - Using Unity's AI Navigation system
